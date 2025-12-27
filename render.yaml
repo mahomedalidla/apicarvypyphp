@@ -1,0 +1,22 @@
+# Archivo de configuración para Render.com
+
+services:
+  - type: web
+    name: api-python-carvy
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    # Variables de entorno SIMPLIFICADAS
+    envVars:
+      # --- Claves de iLoveIMG ---
+      - key: ILOVEIMG_PUBLIC_KEY
+        sync: false
+      - key: ILOVEIMG_SECRET_KEY
+        sync: false
+      # --- Claves de Supabase ---
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY # Recuerda usar tu 'service_role' key
+        sync: false
+      - key: SUPABASE_BUCKET # El valor por defecto es 'images'
+        sync: false

@@ -1,0 +1,17 @@
+# Web framework para la API
+fastapi
+
+# Servidor ASGI para FastAPI
+uvicorn[standard]
+
+# Para leer las variables de entorno del archivo .env
+python-dotenv
+
+# El SDK oficial de Supabase para Python
+supabase
+
+# Necesario para que FastAPI pueda manejar la subida de archivos
+python-multipart
+
+# Necesario para descargar la imagen de iLoveIMG
+requests
