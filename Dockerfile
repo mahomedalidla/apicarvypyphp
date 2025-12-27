@@ -8,7 +8,9 @@ FROM python:3.10-slim-buster
 # php-curl: necesario para Composer y la biblioteca iLoveIMG
 # php-json: necesario para Composer y la biblioteca iLoveIMG
 # php-mbstring: necesario para Composer
-RUN apt-get update && apt-get install -y \
+RUN echo "deb http://archive.debian.org/debian/ buster main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list && \
+    apt-get update && apt-get install -y \
     php-cli \
     php-curl \
     php-json \
