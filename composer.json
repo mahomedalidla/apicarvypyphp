@@ -1,4 +1,10 @@
 {
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.org"
+        }
+    ],
     "require": {
         "iloveimg/iloveimg-php": "^1.2"
     }
