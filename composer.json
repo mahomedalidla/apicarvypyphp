@@ -1,0 +1,5 @@
+{
+    "require": {
+        "iloveimg/iloveimg-php": "^1.2"
+    }
+}

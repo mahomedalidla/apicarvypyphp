@@ -41,6 +41,7 @@ COPY . .
 
 # Instalar dependencias de PHP usando Composer (para la biblioteca iLoveIMG)
 # Aquí también aseguramos que composer.json y composer.lock existan antes de este paso
+RUN composer install --no-dev --optimize-autoloader --working-dir=.
 
 
 # Crear el directorio 'output' para archivos temporales (si no existe)
