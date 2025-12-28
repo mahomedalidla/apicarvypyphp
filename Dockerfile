@@ -17,6 +17,7 @@ RUN echo "deb http://archive.debian.org/debian/ buster main" > /etc/apt/sources.
     php-mbstring \
     unzip \
     git \
+    ca-certificates \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
