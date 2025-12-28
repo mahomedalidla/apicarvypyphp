@@ -40,7 +40,17 @@ COPY . .
 
 # Instalar dependencias de PHP usando Composer (para la biblioteca iLoveIMG)
 # Aquí también aseguramos que composer.json y composer.lock existan antes de este paso
-RUN composer install --no-dev --optimize-autoloader --working-dir=.
+RUN apt-get update && apt-get install -y curl iputils-ping && \
+    echo "--- Checking Composer Version ---" && \
+    composer --version && \
+    echo "--- Running Composer Diagnose ---" && \
+    composer diagnose && \
+    echo "--- Pinging Packagist ---" && \
+    ping -c 4 repo.packagist.org && \
+    echo "--- Curling Packagist ---" && \
+    curl -vvv https://repo.packagist.org/packages.json && \
+    echo "--- Attempting Composer Install ---" && \
+    composer install --no-dev --optimize-autoloader --working-dir=.
 
 
 # Crear el directorio 'output' para archivos temporales (si no existe)
